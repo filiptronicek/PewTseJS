@@ -1,0 +1,44 @@
+h1 {
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 8vh !important;
+}
+.subs {
+	font-size: 4vh !important;
+}
+#gap {
+	font-size: 9vh !important;
+}
+
+.subgap {
+	font-size: 3.5vh !important;
+}
+.copy {
+	transition-duration: 1000ms;
+	position: absolute;
+	bottom: 5vh;
+	right: 5vh;
+	cursor: pointer;
+	font-size: 2.5vh;
+}
+.copy:hover {
+	transition-duration: 200ms;
+	color: #ef5350;
+}
+body.dark {
+	transition-duration: 500ms;
+	color: white;
+	background: #303030;
+}
+.toggledarkmode {
+	position: absolute;
+	bottom: 5vh;
+	left: 5vh;
+	cursor: pointer;
+}
+body {
+	transition-duration: 500ms;
+}
+a {
+	text-decoration: none;
+	color: black;
+}
