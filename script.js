@@ -89,6 +89,8 @@ function getSubs() {
 					if (diff < 0) {
 						$('.bar-one').show();
 						$('.bar').css('width', Math.floor(diff / 150 * -1) + '%');
+					} else {
+						$('.bar-one').hide();
 					}
 				}
 			);
