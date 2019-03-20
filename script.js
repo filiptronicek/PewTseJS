@@ -86,6 +86,10 @@ function getSubs() {
 					console.warn(diff);
 					$('#gap').html(diff.toLocaleString());
 					$('.tse').html(Number(tser_subs.toLocaleString()));
+					if (diff < 0) {
+						$('.bar-one').show();
+						$('.bar').css('width', Math.floor(diff / 150 * -1) + '%');
+					}
 				}
 			);
 		}
@@ -113,4 +117,14 @@ function Popup() {
 document.addEventListener('DOMContentLoaded', function() {
 	var elems = document.querySelectorAll('.tap-target');
 	var instances = M.TapTarget.init(elems, options);
+});
+(function($) {
+	$.fn.progress = function() {
+		var percent = this.data('percent');
+		this.css('width', percent + '%');
+	};
+})(jQuery);
+
+$(document).ready(function() {
+	$('.bar-one .bar').progress();
 });

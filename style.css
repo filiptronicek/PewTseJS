@@ -42,3 +42,21 @@ a {
 	text-decoration: none;
 	color: black;
 }
+.bar-con {
+	background-color: #ccc;
+	height: 1em;
+	margin-bottom: 1em;
+	width: 50%;
+}
+.bar {
+	float: left;
+	height: 100%;
+	width: 0%;
+}
+.bar-one .bar {
+	background-color: #de003d;
+	transition: width ease-in 1s;
+	-webkit-transition: width ease-in 1s;
+	-moz-transition: width ease-in 1s;
+	-o-transition: width ease-in 1s;
+}
