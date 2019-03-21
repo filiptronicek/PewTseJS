@@ -91,10 +91,12 @@ function getSubs() {
 						$('.bar-one').show();
 						$('.fkd').show();
 						//$('body').css('background-color', '#de003d');
-						//$('body').addClass('alert');
+						$('body').addClass('alert');
 
 						$('.bar').css('width', Math.floor(diff / 600 * -1) + '%');
 					} else {
+						$('body').removeClass('alert');
+
 						$('.bar-one').hide();
 						$('fkd').hide();
 					}

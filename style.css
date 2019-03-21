@@ -63,11 +63,12 @@ a {
 }
 
 body.alert {
+	
 	background-color: #de003d;
 	-webkit-animation-name: example; /* Safari 4.0 - 8.0 */
 	-webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
 	animation-name: example;
-	animation-duration: 2s;
+	animation-duration: 1s;
 	animation-iteration-count: 1000000;
 }
 
@@ -84,18 +85,18 @@ body.alert {
 /* Standard syntax */
 @keyframes example {
 	0% {
-		background-color: #de003d;
+		background-color: #5c0018;
 	}
 	40% {
-		background-color: #db033d;
+		background-color: #ac002e;
 	}
 	60% {
-		background-color: #e0003c;
+		background-color: #b30030;
 	}
 	80% {
-		background-color: #ee003f;
+		background-color: #c90539;
 	}
 	100% {
-		background-color: #de003d;
+		background-color: #5a0018;
 	}
 }
