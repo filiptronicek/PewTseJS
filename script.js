@@ -5,7 +5,7 @@ var tser_subs_format, pewds_subs_format;
 var diff;
 var interval = 100;
 var darkmode = localStorage.getItem('darkmode');
-
+var apiKey = 'AIzaSyAYU65uIHdx9rvCF4WpJMELo6CALYdSmYg';
 // request permission on page load
 document.addEventListener('DOMContentLoaded', function() {
 	if (!Notification) {
@@ -52,7 +52,6 @@ $('.toggledarkmode').click(function() {
 $(document).ready(getSubs);
 $(document).ready(function() {
 	setTimeout(notifyMe, 1000);
-	Popup();
 });
 
 function getSubs() {
@@ -62,7 +61,8 @@ function getSubs() {
 			part: 'statistics',
 			id: pew_id,
 			fields: 'items/statistics/subscriberCount',
-			key: 'AIzaSyCagE4v2NKU9NNd4W692_gZ3CWpdWJ05rc'
+			//key: 'AIzaSyCagE4v2NKU9NNd4W692_gZ3CWpdWJ05rc'
+			key: apiKey
 		},
 		function(data) {
 			console.log('Our lord: ' + data.items[0].statistics.subscriberCount);
@@ -76,9 +76,10 @@ function getSubs() {
 					part: 'statistics',
 					id: tser_id,
 					fields: 'items/statistics/subscriberCount',
-					key: 'AIzaSyCagE4v2NKU9NNd4W692_gZ3CWpdWJ05rc'
+					key: apiKey
 				},
 				function(data) {
+					console.log(data);
 					console.log('T-gay: ' + data.items[0].statistics.subscriberCount);
 					tser_subs = data.items[0].statistics.subscriberCount;
 					tser_subs_format = Number(tser_subs.toLocaleString());
@@ -89,6 +90,8 @@ function getSubs() {
 					if (diff < 0) {
 						$('.bar-one').show();
 						$('.fkd').show();
+						//$('body').css('background-color', '#de003d');
+						//$('body').addClass('alert');
 
 						$('.bar').css('width', Math.floor(diff / 600 * -1) + '%');
 					} else {
@@ -102,27 +105,12 @@ function getSubs() {
 }
 setInterval(() => {
 	getSubs();
-}, interval);
+}, 500);
 
 setInterval(() => {
 	notifyMe();
 }, 800000);
 
-function Popup() {
-	if (localStorage.getItem('popState') != 'shown') {
-		$('.tap-target').tapTarget();
-		localStorage.setItem('popState', 'shown');
-	}
-
-	$j('#popup-close, #popup').click(function() // You are clicking the close button
-	{
-		$j('#popup').fadeOut(); // Now the pop up is hiden.
-	});
-}
-document.addEventListener('DOMContentLoaded', function() {
-	var elems = document.querySelectorAll('.tap-target');
-	var instances = M.TapTarget.init(elems, options);
-});
 (function($) {
 	$.fn.progress = function() {
 		var percent = this.data('percent');
