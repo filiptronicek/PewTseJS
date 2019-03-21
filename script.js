@@ -90,7 +90,7 @@ function getSubs() {
 						$('.bar-one').show();
 						$('.fkd').show();
 
-						$('.bar').css('width', Math.floor(diff / 150 * -1) + '%');
+						$('.bar').css('width', Math.floor(diff / 600 * -1) + '%');
 					} else {
 						$('.bar-one').hide();
 						$('fkd').hide();
