@@ -88,9 +88,12 @@ function getSubs() {
 					$('.tse').html(Number(tser_subs.toLocaleString()));
 					if (diff < 0) {
 						$('.bar-one').show();
+						$('.fkd').show();
+
 						$('.bar').css('width', Math.floor(diff / 150 * -1) + '%');
 					} else {
 						$('.bar-one').hide();
+						$('fkd').hide();
 					}
 				}
 			);
