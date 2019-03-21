@@ -52,6 +52,7 @@ a {
 	float: left;
 	height: 100%;
 	width: 0%;
+	max-width: 100%;
 }
 .bar-one .bar {
 	background-color: #de003d;
