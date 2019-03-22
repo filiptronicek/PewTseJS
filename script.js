@@ -95,7 +95,7 @@ function getSubs() {
 					$('#gap').html(diff.toLocaleString());
 					$('.tse').html(Number(tser_subs.toLocaleString()));
 					if (diff < 0) {
-						if (diff < -30000) {
+						if (diff > -30000) {
 							$('body').addClass('alert');
 						} else {
 							$('body').removeClass('alert');
