@@ -99,7 +99,7 @@ function getSubs() {
 						$('body').removeClass('alert');
 
 						$('.bar-one').hide();
-						$('fkd').hide();
+						$('.fkd').hide();
 					}
 				}
 			);
