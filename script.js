@@ -5,7 +5,7 @@ var tser_subs_format, pewds_subs_format;
 var diff;
 var interval = 100;
 var darkmode = localStorage.getItem('darkmode');
-var apiKey = 'AIzaSyAYU65uIHdx9rvCF4WpJMELo6CALYdSmYg';
+var apiKey = [ 'AIzaSyAYU65uIHdx9rvCF4WpJMELo6CALYdSmYg', 'AIzaSyDQ5oHZpkfYJUM6qwUHuqAPDh4bJl2V4FM' ];
 // request permission on page load
 document.addEventListener('DOMContentLoaded', function() {
 	if (!Notification) {
@@ -55,6 +55,7 @@ $(document).ready(function() {
 });
 
 function getSubs() {
+	console.log('Sending request...');
 	$.get(
 		'https://www.googleapis.com/youtube/v3/channels?',
 		{
@@ -62,7 +63,7 @@ function getSubs() {
 			id: pew_id,
 			fields: 'items/statistics/subscriberCount',
 			//key: 'AIzaSyCagE4v2NKU9NNd4W692_gZ3CWpdWJ05rc'
-			key: apiKey
+			key: apiKey[Math.floor(Math.random() * apiKey.length)]
 		},
 		function(data) {
 			console.log('Our lord: ' + data.items[0].statistics.subscriberCount);
@@ -76,7 +77,7 @@ function getSubs() {
 					part: 'statistics',
 					id: tser_id,
 					fields: 'items/statistics/subscriberCount',
-					key: apiKey
+					key: apiKey[Math.floor(Math.random() * apiKey.length)]
 				},
 				function(data) {
 					console.log(data);
