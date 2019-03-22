@@ -5,7 +5,13 @@ var tser_subs_format, pewds_subs_format;
 var diff;
 var interval = 100;
 var darkmode = localStorage.getItem('darkmode');
-var apiKey = [ 'AIzaSyAYU65uIHdx9rvCF4WpJMELo6CALYdSmYg', 'AIzaSyDQ5oHZpkfYJUM6qwUHuqAPDh4bJl2V4FM' ];
+var apiKey = [
+	'AIzaSyAYU65uIHdx9rvCF4WpJMELo6CALYdSmYg',
+	'AIzaSyDQ5oHZpkfYJUM6qwUHuqAPDh4bJl2V4FM',
+	'AIzaSyB00Ohd-6cKEpCr3zAt5iXlnAMIs-q6elA',
+	'AIzaSyC-v1mTIVLVIzYS-aXvohw8rD1dxmcnzVI',
+	'AIzaSyAhAnh_QnW8x2O65Y2XUZvvlEnTkpnSLHw'
+];
 // request permission on page load
 document.addEventListener('DOMContentLoaded', function() {
 	if (!Notification) {
@@ -20,7 +26,7 @@ function notifyMe() {
 	else {
 		var notification = new Notification('Bro update', {
 			icon: 'brofist.png',
-			body: 'Subgap update! \nThe subgap is now: ' + diff
+			body: 'Subgap update!\nThe subgap is now: ' + diff
 		});
 		/*
 		notification.onclick = function() {
