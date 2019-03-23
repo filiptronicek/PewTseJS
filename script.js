@@ -3,7 +3,7 @@ var tser_id = 'UCq-Fj5jknLsUf-MWSy4_brA';
 var tser_subs, pewds_subs;
 var tser_subs_format, pewds_subs_format;
 var diff;
-var interval = 100;
+var interval = 700;
 var darkmode = localStorage.getItem('darkmode');
 var apiKey = [
 	'AIzaSyAYU65uIHdx9rvCF4WpJMELo6CALYdSmYg',
@@ -118,8 +118,8 @@ function getSubs() {
 	);
 }
 setInterval(() => {
-	getSubs();
-}, 500);
+	getSubs();	
+}, interval);
 
 setInterval(() => {
 	notifyMe();
