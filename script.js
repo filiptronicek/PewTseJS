@@ -11,7 +11,7 @@ var apiKey = [
 	'AIzaSyB00Ohd-6cKEpCr3zAt5iXlnAMIs-q6elA',
 	'AIzaSyC-v1mTIVLVIzYS-aXvohw8rD1dxmcnzVI',
 	'AIzaSyAhAnh_QnW8x2O65Y2XUZvvlEnTkpnSLHw',
-	'AIzaSyBIByFR0gGjQx8J6YUIRQ07df8imgOqGYg'	
+	'AIzaSyBIByFR0gGjQx8J6YUIRQ07df8imgOqGYg'
 ];
 
 // request permission on page load
@@ -119,6 +119,9 @@ function getSubs() {
 		}
 	);
 }
+setInterval(() => {
+	getSubs();
+}, interval);
 
 setInterval(() => {
 	notifyMe();
