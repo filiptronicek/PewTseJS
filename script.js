@@ -10,8 +10,10 @@ var apiKey = [
 	'AIzaSyDQ5oHZpkfYJUM6qwUHuqAPDh4bJl2V4FM',
 	'AIzaSyB00Ohd-6cKEpCr3zAt5iXlnAMIs-q6elA',
 	'AIzaSyC-v1mTIVLVIzYS-aXvohw8rD1dxmcnzVI',
-	'AIzaSyAhAnh_QnW8x2O65Y2XUZvvlEnTkpnSLHw'
+	'AIzaSyAhAnh_QnW8x2O65Y2XUZvvlEnTkpnSLHw',
+	'AIzaSyBIByFR0gGjQx8J6YUIRQ07df8imgOqGYg'	
 ];
+
 // request permission on page load
 document.addEventListener('DOMContentLoaded', function() {
 	if (!Notification) {
@@ -117,9 +119,6 @@ function getSubs() {
 		}
 	);
 }
-setInterval(() => {
-	getSubs();
-}, interval);
 
 setInterval(() => {
 	notifyMe();
