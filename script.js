@@ -5,6 +5,7 @@ var tser_subs_format, pewds_subs_format;
 var diff;
 var interval = 700;
 var darkmode = localStorage.getItem('darkmode');
+
 var apiKey = [
 	'AIzaSyAYU65uIHdx9rvCF4WpJMELo6CALYdSmYg',
 	'AIzaSyDQ5oHZpkfYJUM6qwUHuqAPDh4bJl2V4FM',
@@ -137,13 +138,8 @@ setInterval(() => {
 $(document).ready(function() {
 	$('.bar-one .bar').progress();
 });
-document.addEventListener('DOMContentLoaded', function() {
-	var elems = document.querySelectorAll('.modal');
-	var instances = M.Modal.init(elems, options);
-});
-
-// Or with jQuery
 
 $(document).ready(function() {
 	$('.modal').modal();
+	$('.tooltipped').tooltip();
 });
