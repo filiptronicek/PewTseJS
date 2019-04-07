@@ -144,7 +144,6 @@ $(document).ready(function() {
 function GetLoop() {
 	setTimeout(getSubs, interval);
 	window.onblur = function() {};
-	window.onfocus = function() {
-		GetLoop();
-	};
+	window.onfocus = function() {};
+	GetLoop();
 }
