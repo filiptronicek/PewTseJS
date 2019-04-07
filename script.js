@@ -120,9 +120,6 @@ function getSubs() {
 		}
 	);
 }
-setInterval(() => {
-	getSubs();
-}, interval);
 
 setInterval(() => {
 	notifyMe();
@@ -142,4 +139,12 @@ $(document).ready(function() {
 $(document).ready(function() {
 	$('.modal').modal();
 	$('.tooltipped').tooltip();
+	GetLoop();
 });
+function GetLoop() {
+	setTimeout(getSubs, interval);
+	window.onblur = function() {};
+	window.onfocus = function() {
+		GetLoop();
+	};
+}
