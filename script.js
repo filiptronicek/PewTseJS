@@ -11,7 +11,7 @@ var diff;
 var interval = 700;
 var darkmode = localStorage.getItem('darkmode');
 var thisavatar;
-/*
+
 var apiKey = [
 	'AIzaSyAYU65uIHdx9rvCF4WpJMELo6CALYdSmYg',
 	'AIzaSyDQ5oHZpkfYJUM6qwUHuqAPDh4bJl2V4FM',
@@ -20,7 +20,7 @@ var apiKey = [
 	'AIzaSyAhAnh_QnW8x2O65Y2XUZvvlEnTkpnSLHw',
 	'AIzaSyBIByFR0gGjQx8J6YUIRQ07df8imgOqGYg'
 ];
-*/
+
 var focus = true;
 window.onblur = function() {
 	focus = false;
@@ -109,7 +109,7 @@ $(document).ready(getSubs);
 $(document).ready(function() {
 	setTimeout(notifyMe, 1000);
 });
-/*
+
 function getSubs() {
 	console.log('Sending request...');
 	$.get(
@@ -166,7 +166,7 @@ function getSubs() {
 		}
 	);
 }
-*/
+
 setInterval(() => {
 	notifyMe();
 }, 800000);
