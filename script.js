@@ -1,11 +1,17 @@
 var pew_id = 'UC-lHJZR3Gqxm24_Vd_AJ5Yw';
 var tser_id = 'UCq-Fj5jknLsUf-MWSy4_brA';
+var ids = {
+	pewdiepie: 'UC-lHJZR3Gqxm24_Vd_AJ5Yw',
+	tseries: 'UCq-Fj5jknLsUf-MWSy4_brA'
+};
+var idray = [ 'UC-lHJZR3Gqxm24_Vd_AJ5Yw', 'UCq-Fj5jknLsUf-MWSy4_brA' ];
 var tser_subs, pewds_subs;
 var tser_subs_format, pewds_subs_format;
 var diff;
 var interval = 700;
 var darkmode = localStorage.getItem('darkmode');
-
+var thisavatar;
+/*
 var apiKey = [
 	'AIzaSyAYU65uIHdx9rvCF4WpJMELo6CALYdSmYg',
 	'AIzaSyDQ5oHZpkfYJUM6qwUHuqAPDh4bJl2V4FM',
@@ -14,7 +20,48 @@ var apiKey = [
 	'AIzaSyAhAnh_QnW8x2O65Y2XUZvvlEnTkpnSLHw',
 	'AIzaSyBIByFR0gGjQx8J6YUIRQ07df8imgOqGYg'
 ];
+*/
+var focus = true;
+window.onblur = function() {
+	focus = false;
+};
+window.onfocus = function() {
+	focus = true;
+};
+document.onblur = window.onblur;
+document.focus = window.focus;
 
+function getAvatar() {
+	$.get(
+		'https://www.googleapis.com/youtube/v3/channels?',
+		{
+			part: 'snippet',
+			id: ids.pewdiepie,
+			fields: 'items/snippet/thumbnails',
+			key: 'AIzaSyCzT1BUcFT4jxvSv_Usbn5wO1ejdcc3nNw'
+		},
+		function(data) {
+			thisavatar = data.items[0].snippet.thumbnails.default.url;
+			console.log(data.items[0].snippet.thumbnails.default.url);
+			$('#pewds_avatar').attr('src', data.items[0].snippet.thumbnails.default.url);
+		}
+	);
+	$.get(
+		'https://www.googleapis.com/youtube/v3/channels?',
+		{
+			part: 'snippet',
+			id: ids.tseries,
+			fields: 'items/snippet/thumbnails',
+			key: 'AIzaSyCzT1BUcFT4jxvSv_Usbn5wO1ejdcc3nNw'
+		},
+		function(data) {
+			thisavatar = data.items[0].snippet.thumbnails.default.url;
+			console.log(data.items[0].snippet.thumbnails.default.url);
+			$('#tser_avatar').attr('src', data.items[0].snippet.thumbnails.default.url);
+		}
+	);
+}
+getAvatar();
 // request permission on page load
 document.addEventListener('DOMContentLoaded', function() {
 	if (!Notification) {
@@ -62,7 +109,7 @@ $(document).ready(getSubs);
 $(document).ready(function() {
 	setTimeout(notifyMe, 1000);
 });
-
+/*
 function getSubs() {
 	console.log('Sending request...');
 	$.get(
@@ -119,7 +166,7 @@ function getSubs() {
 		}
 	);
 }
-
+*/
 setInterval(() => {
 	notifyMe();
 }, 800000);
@@ -142,7 +189,6 @@ $(document).ready(function() {
 });
 function GetLoop() {
 	setTimeout(getSubs, interval);
-	window.onblur = function() {};
-	window.onfocus = function() {};
+
 	GetLoop();
 }
