@@ -78,7 +78,7 @@ function getSubs() {
 			console.log('Our lord: ' + data.items[0].statistics.subscriberCount);
 			pewds_subs = data.items[0].statistics.subscriberCount;
 			pewds_subs_format = Number(pewds_subs.toLocaleString());
-			$('.pew').html(pewds_subs_format);
+			$('.pew').html(Number(pewds_subs).toLocaleString());
 
 			$.get(
 				'https://www.googleapis.com/youtube/v3/channels?',
@@ -92,11 +92,10 @@ function getSubs() {
 					console.log(data);
 					console.log('T-gay: ' + data.items[0].statistics.subscriberCount);
 					tser_subs = data.items[0].statistics.subscriberCount;
-					tser_subs_format = Number(tser_subs.toLocaleString());
 					diff = pewds_subs - tser_subs;
 					console.warn(diff);
 					$('#gap').html(diff.toLocaleString());
-					$('.tse').html(Number(tser_subs.toLocaleString()));
+					$('.tse').html(Number(tser_subs).toLocaleString());
 					if (diff < 0) {
 						if (diff < -30000) {
 							$('body').removeClass('alert');
