@@ -78,30 +78,12 @@ function notifyMe() {
 			icon: 'brofist.png',
 			body: 'Subgap update!\nThe subgap is now: ' + diff
 		});
-		/*
-		notification.onclick = function() {
-			window.open('http://stackoverflow.com/a/13328397/1269037');
-			
-		};*/
 	}
 }
 $('.copy').click(function() {
 	location.href = 'https://github.com/filiptronicek';
 });
 $('.toggledarkmode').click(function() {
-	/*
-	if (!darkmode) {
-		localStorage.setItem('darkmode', 'true');
-	} else {
-		if (localStorage.darkmode == 'true') {
-			$('body').removeClass('dark');
-			localStorage.darkmode == 'false';
-		} else {
-			$('body').addClass('dark');
-			localStorage.darkmode == 'true';
-		}
-    }
-    */
 	$('body').toggleClass('dark');
 });
 
