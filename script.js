@@ -8,7 +8,7 @@ var idray = [ 'UC-lHJZR3Gqxm24_Vd_AJ5Yw', 'UCq-Fj5jknLsUf-MWSy4_brA' ];
 var tser_subs, pewds_subs;
 var tser_subs_format, pewds_subs_format;
 var diff;
-var interval = 7000;
+var interval = 2000;
 var darkmode = localStorage.getItem('darkmode');
 var thisavatar;
 
@@ -170,4 +170,3 @@ $(document).ready(function() {
 $(document).ready(function() {
 	$('.tooltipped').tooltip();
 });
-
