@@ -8,7 +8,7 @@ var idray = [ 'UC-lHJZR3Gqxm24_Vd_AJ5Yw', 'UCq-Fj5jknLsUf-MWSy4_brA' ];
 var tser_subs, pewds_subs;
 var tser_subs_format, pewds_subs_format;
 var diff;
-var interval = 700;
+var interval = 7000;
 var darkmode = localStorage.getItem('darkmode');
 var thisavatar;
 
@@ -106,6 +106,7 @@ function getSubs() {
 		},
 		function(data) {
 			console.log('Our lord: ' + data.items[0].statistics.subscriberCount);
+			console.log(data.items[0].statistics);
 			pewds_subs = data.items[0].statistics.subscriberCount;
 			pewds_subs_format = Number(pewds_subs.toLocaleString());
 			$('.pew').html(Number(pewds_subs).toLocaleString());
@@ -166,12 +167,8 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
-	$('.modal').modal();
 	$('.tooltipped').tooltip();
 	GetLoop();
 });
-function GetLoop() {
-	setTimeout(getSubs, interval);
 
-	GetLoop();
-}
+setInterval(getSubs, interval);
