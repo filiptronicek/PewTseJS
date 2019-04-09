@@ -150,6 +150,7 @@ function getSubs() {
 		}
 	);
 }
+setInterval(getSubs, interval);
 
 setInterval(() => {
 	notifyMe();
@@ -168,7 +169,5 @@ $(document).ready(function() {
 
 $(document).ready(function() {
 	$('.tooltipped').tooltip();
-	GetLoop();
 });
 
-setInterval(getSubs, interval);
