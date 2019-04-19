@@ -129,18 +129,18 @@ function getSubs() {
 					$('.tse').html(Number(tser_subs).toLocaleString());
 					if (diff < 0) {
 						if (diff < -30000) {
-							$('body').removeClass('alert');
+							//$('body').removeClass('alert');
 						} else {
-							$('body').addClass('alert');
+							//$('body').addClass('alert');
 						}
 						$('.bar-one').show();
 						$('.fkd').show();
 						//$('body').css('background-color', '#de003d');
-						$('body').addClass('alert');
+						//$('body').addClass('alert');
 
 						$('.bar').css('width', Math.floor(diff / 600 * -1) + '%');
 					} else {
-						$('body').removeClass('alert');
+						//$('body').removeClass('alert');
 
 						$('.bar-one').hide();
 						$('.fkd').hide();
