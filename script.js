@@ -82,7 +82,7 @@ function notifyMe() {
 	}
 }
 $('.copy').click(function() {
-	location.href = 'https://github.com/filiptronicek';
+	location.href = 'https://filiptronicek.github.io';
 });
 $('.toggledarkmode').click(function() {
 	$('body').toggleClass('dark');
