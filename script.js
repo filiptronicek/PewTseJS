@@ -33,37 +33,7 @@ window.onfocus = function() {
 document.onblur = window.onblur;
 document.focus = window.focus;
 
-function getAvatar() {
-	$.get(
-		'https://www.googleapis.com/youtube/v3/channels?',
-		{
-			part: 'snippet',
-			id: ids.pewdiepie,
-			fields: 'items/snippet/thumbnails',
-			key: 'AIzaSyCzT1BUcFT4jxvSv_Usbn5wO1ejdcc3nNw'
-		},
-		function(data) {
-			thisavatar = data.items[0].snippet.thumbnails.default.url;
-			console.log(data.items[0].snippet.thumbnails.default.url);
-			$('#pewds_avatar').attr('src', data.items[0].snippet.thumbnails.default.url);
-			$.get(
-				'https://www.googleapis.com/youtube/v3/channels?',
-				{
-					part: 'snippet',
-					id: ids.tseries,
-					fields: 'items/snippet/thumbnails',
-					key: 'AIzaSyCzT1BUcFT4jxvSv_Usbn5wO1ejdcc3nNw'
-				},
-				function(data) {
-					thisavatar = data.items[0].snippet.thumbnails.default.url;
-					console.log(data.items[0].snippet.thumbnails.default.url);
-					$('#tser_avatar').attr('src', data.items[0].snippet.thumbnails.default.url);
-				}
-			);
-		}
-	);
-}
-getAvatar();
+
 // request permission on page load
 document.addEventListener('DOMContentLoaded', function() {
 	if (!Notification) {
