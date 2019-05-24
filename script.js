@@ -21,6 +21,7 @@ var apiKey = [
 	'AIzaSyBIByFR0gGjQx8J6YUIRQ07df8imgOqGYg',
 	'AIzaSyBVUA2oJgY61wMTCt-bPdem3JgrZuCFmo8'
 ];
+$('.github-dark').hide();
 
 var focus = true;
 window.onblur = function() {
@@ -86,6 +87,13 @@ $('.copy').click(function() {
 });
 $('.toggledarkmode').click(function() {
 	$('body').toggleClass('dark');
+	if ($('body').hasClass('dark')) {
+		$('.github-light').fadeOut(500);
+		$('.github-dark').fadeIn(500);
+	} else {
+		$('.github-light').fadeIn(500);
+		$('.github-dark').fadeOut(500);
+	}
 });
 
 $(document).ready(getSubs);
