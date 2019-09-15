@@ -90,7 +90,7 @@ function getSubs() {
 					console.log(data);
 					console.log('T-gay: ' + data.items[0].statistics.subscriberCount);
 					tser_subs = data.items[0].statistics.subscriberCount;
-					diff = pewds_subs - tser_subs;
+					diff = abs(pewds_subs - tser_subs);
 					console.warn(diff);
 					$('#gap').html(diff.toLocaleString());
 					$('.tse').html(Number(tser_subs).toLocaleString());
