@@ -94,7 +94,7 @@ function getSubs() {
 					tser_subs = data.items[0].statistics.subscriberCount;
 					diff = Math.abs(pewds_subs - tser_subs);
 					console.warn(diff);
-					$('#gap').html(diff.toLocaleString());
+					$('#gap').html(diff / 1000000 + "M");
 					$('.tse').html(tser_subs / 1000000 + "M");
 					if (diff < 0) {
 						if (diff < -30000) {
