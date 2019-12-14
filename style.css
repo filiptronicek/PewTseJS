@@ -127,4 +127,22 @@ body {
 	.toggledarkmode {
 		display: none !important;
 	}
+	.github-dark{
+		transition-duration: 500ms;
+		display: block !important;
+	}
+	.github-light{
+		transition-duration: 500ms;
+		display: none;
+	}
+}
+@media (prefers-color-scheme: light) {
+	.github-dark{
+		transition-duration: 500ms;
+		display: none !important;
+	}
+	.github-light{
+		transition-duration: 500ms;
+		display: block !important;
+	}
 }
